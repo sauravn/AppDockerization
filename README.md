@@ -38,6 +38,33 @@ RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["application.py"]
 ```
+
+3.	Build docker file: 
+```
+$ sudo docker build -t sample-docker:latest .
+```
+
+4.	Check docker image: 
+```
+$ sudo docker images
+```
+
+5.	Run docker container: 
+```
+$ sudo docker run -d -p 5000:5000 sample-docker
+```
+
+6.	Check docker container: 
+```
+$ sudo docker ps
+```
+
+7.	Go to browser on your VM and type: 
+```
+http://0.0.0.0:5000
+```
+
+### Commands - Help
 *ADD:*
   Takes as input a file and a destination. It essentially grabs files from the host machine (your computer) and places them inside the Docker image. You can also use url’s as arguments so that it downloads data from the internet into the Docker image instead, as well as decompressing files from known compression formats (I’ve been told not to trust this too much though). COPY does pretty much the same without the URL or decompression features.
 
@@ -136,25 +163,4 @@ Indicates in which folder the CMD commands should be executed.
 #### Usage: WORKDIR /path
 ```
 WORKDIR ~/
-```
-
-3.	Build docker file: 
-```
-$ sudo docker build -t sample-docker:latest .
-```
-4.	Check docker image: 
-```
-$ sudo docker images
-```
-5.	Run docker container: 
-```
-$ sudo docker run -d -p 5000:5000 sample-docker
-```
-6.	Check docker container: 
-```
-$ sudo docker ps
-```
-7.	Go to browser on your VM and type: 
-```
-http://0.0.0.0:5000
 ```
