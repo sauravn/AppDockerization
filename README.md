@@ -1,6 +1,6 @@
 # AppDockerization
 
-Create a sample flask application and dockerize it
+Create a simple flask application and dockerize it
 
 ## Getting Started
 
