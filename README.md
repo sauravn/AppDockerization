@@ -41,21 +41,21 @@ CMD ["application.py"]
 *ADD:*
   Takes as input a file and a destination. It essentially grabs files from the host machine (your computer) and places them inside the Docker image. You can also use url’s as arguments so that it downloads data from the internet into the Docker image instead, as well as decompressing files from known compression formats (I’ve been told not to trust this too much though). COPY does pretty much the same without the URL or decompression features.
 
-  Usage: ADD [source directory or URL] [destination directory]
+ #### Usage: ADD [source directory or URL] [destination directory]
   ADD /my_app_folder /my_app_folder
 
-b. CMD: 
+*CMD:* 
 It is used to run a specific command, but this command is executed at the moment of initiating the container, not when building the image. For example we would use CMD to run our python file when the image is initiated. If you want to run a command at the moment of building the image, we would use RUN, which I’ll describe later.
 
-Usage: CMD application "argument", "argument", ..
+#### Usage: CMD application "argument", "argument", ..
 ```
 CMD "echo" "Hello docker!"
 ```
 
-c. ENTRYPOINT: 
+*ENTRYPOINT:* 
 Tells our image what is the default application we will be using for our commands. So if we were to tell our image that our entry point is “python” then, when we run CMD, we would just give it the arguments, as it would know that python is the application to use to run these commands.
 
-Usage: ENTRYPOINT application "argument", "argument", ..
+#### Usage: ENTRYPOINT application "argument", "argument", ..
 
 ** Remember: arguments are optional. They can be provided by CMD
 ** or during the creation of a container. 
@@ -70,7 +70,7 @@ CMD "Hello docker!"
 ENTRYPOINT echo
 ```
 
-d. ENV: 
+*ENV:*
 Sets environment variables by giving it a key = value pair. Really makes your life easier.
 
 #### Usage: ENV key value
@@ -78,7 +78,7 @@ Sets environment variables by giving it a key = value pair. Really makes your li
 ENV SERVER_WORKS 4
 ```
 
-e. EXPOSE: 
+*EXPOSE:*
 It’s used to associate a specific port to communicate with other containers. I would avoid using EXPOSE, as usually the port redirection is done by each host at the moment of running. However it can be useful when having some inter-container communication. This StackOverflow answer is pretty good, take a look if you’re interested in reading more about it.
 
 #### Usage: EXPOSE [port]
@@ -86,7 +86,7 @@ It’s used to associate a specific port to communicate with other containers. I
 EXPOSE 8080
 ```
 
-f. FROM: 
+*FROM:* 
 It needs to be the first command declared in the Dockerfile. It indicates what image you are basing your image on. It can be any image, even one you’ve made yourself before. If not in the machine, Docker will get it from DockerHub.
 
 #### Usage: FROM [image name]
@@ -94,7 +94,7 @@ It needs to be the first command declared in the Dockerfile. It indicates what i
 FROM ubuntu
 ```
 
-g. MAINTAINER: 
+*MAINTAINER:* 
 Used to give yourself some credit. Can be placed anywhere, and it doesn’t execute.
 
 #### Usage: MAINTAINER [name]
@@ -102,7 +102,7 @@ Used to give yourself some credit. Can be placed anywhere, and it doesn’t exec
 MAINTAINER authors_name
 ```
 
-h. RUN: 
+*RUN:* 
 I mentioned it a bit earlier, this is how you run commands at the moment of building your Docker image. You would use this to install all dependencies your system will have, and have it ready to just go and run your application.
 
 #### Usage: RUN [command]
@@ -110,7 +110,7 @@ I mentioned it a bit earlier, this is how you run commands at the moment of buil
 RUN aptitude install -y riak
 ```
 
-i. USER: 
+*USER:* 
 Used to specify the uid or username of the user you want to run the container based on. This can be used to manage permissions to be had within the container. On my research I stumbled on this story that helps understand a bit more about uid and gid, check it out:
 
 Understanding how uid and gid work in Docker containers
@@ -122,7 +122,7 @@ medium.com
 USER 751
 ```
 
-j. VOLUME: 
+*VOLUME:* 
 Allows a container to have access to a folder on the host machine.
 
 #### Usage: VOLUME ["/dir_1", "/dir_2" ..]
@@ -130,7 +130,7 @@ Allows a container to have access to a folder on the host machine.
 VOLUME ["/my_files"]
 ```
 
-k. WORKDIR: 
+*WORKDIR:* 
 Indicates in which folder the CMD commands should be executed.
 
 #### Usage: WORKDIR /path
