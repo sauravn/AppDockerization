@@ -38,7 +38,7 @@ RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["application.py"]
 ```
-  a. ADD: 
+*ADD:*
   Takes as input a file and a destination. It essentially grabs files from the host machine (your computer) and places them inside the Docker image. You can also use url’s as arguments so that it downloads data from the internet into the Docker image instead, as well as decompressing files from known compression formats (I’ve been told not to trust this too much though). COPY does pretty much the same without the URL or decompression features.
 
   Usage: ADD [source directory or URL] [destination directory]
