@@ -8,6 +8,10 @@ These instructions will get you a copy of the project up and running on your doc
 
 ### Prerequisites
 
+#### OPTION-1
+1. Get an EC2 instance with standard CentOS image installed.
+
+#### OPTION-2
 1. Install Oracle VirtualBox on your laptop
 2. Download and install a latest Ubuntu VM. 
 3. Install updates and docker package.
