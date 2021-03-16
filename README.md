@@ -10,6 +10,7 @@ These instructions will get you a copy of the project up and running on your doc
 
 #### OPTION-1
 1. Get an EC2 instance with standard CentOS image installed.
+2. Install docker package.
 
 #### OPTION-2
 1. Install Oracle VirtualBox on your laptop
@@ -20,9 +21,7 @@ These instructions will get you a copy of the project up and running on your doc
 
 A step by step series of examples that tell you how to get a development env running
 
-1.	If you don’t have a VM with docker installed, please get my sample ubuntu VM that you can directly boot using Virtual Box.
-Path: /<my_NFS_PATH>/UbuntuVM
-2.	Please save the below code in a file named “Dockerfile” in the home directory of your VM.
+1.	Please save the below code in a file named “Dockerfile” in the home directory of your VM.
 ```
 FROM ubuntu:latest
 MAINTAINER Docker OwnerName "something@something.com"
