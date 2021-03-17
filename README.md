@@ -60,12 +60,10 @@ $ sudo docker run -d -p 5000:5000 sample-docker
 6.	Check docker container: 
 ```
 $ sudo docker ps
+CONTAINER ID   IMAGE           COMMAND                  CREATED         STATUS         PORTS                    NAMES
+9fd00ea9cf5f   sample-docker   "python application.…"   6 seconds ago   Up 5 seconds   0.0.0.0:5000->5000/tcp   lucid_goldstine
 ```
 
-7.	Go to browser on your VM and type: 
-```
-http://0.0.0.0:5000
-```
 
 ### Commands - Help
 *ADD:*
