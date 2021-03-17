@@ -63,7 +63,10 @@ $ sudo docker ps
 CONTAINER ID   IMAGE           COMMAND                  CREATED         STATUS         PORTS                    NAMES
 9fd00ea9cf5f   sample-docker   "python application.…"   6 seconds ago   Up 5 seconds   0.0.0.0:5000->5000/tcp   lucid_goldstine
 ```
-
+7. Check the output from your application:
+```
+$ curl 0.0.0.0:5000
+```
 
 ### Commands - Help
 *ADD:*
