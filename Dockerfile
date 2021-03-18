@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 MAINTAINER Docker OwnerName "something@something.com"
 RUN apt-get update -y && apt-get install -y unzip zip
 RUN apt-get install -y python-pip python-dev build-essential
